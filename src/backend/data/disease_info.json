@@ -1,0 +1,74 @@
+{
+  "Healthy rice": {
+    "crop_name": "Healthy rice",
+    "reason": "The rice plants look green and fresh. The leaves do not have any spots, holes, or yellow marks. The plants grow evenly without drying or bending. This shows that the crop is free from any disease or stress.",
+    "tips": "Keep watering the field regularly and do not let water stay for too long. Remove weeds on time and keep the field clean. Check the plants often to make sure no early signs of pests or diseases appear.",
+    "fertilizer": "Use a balanced NPK fertilizer (10:10:10) or apply compost and organic manure to keep the soil rich."
+  },
+  "Healthy tomato": {
+    "crop_name": "Healthy tomato",
+    "reason": "Tomato plants are green and shining. The leaves are straight without curling or yellowing. The fruits, if present, are round and healthy without any black spots or damage. This shows that the plant is healthy and growing properly.",
+    "tips": "Water the plants regularly but avoid too much water. Support the plants with sticks so that they stand upright. Cut extra branches to allow air to pass between the plants. This keeps the plants strong and safe from diseases.",
+    "fertilizer": "Use NPK fertilizers in small amounts or add cow dung manure and compost for better growth."
+  },
+  "Healthy corn": {
+    "crop_name": "Healthy corn",
+    "reason": "Corn plants stand tall and strong with wide green leaves. The leaves do not show any yellow, brown, or gray marks. There are no signs of drying, holes, or pests. This means the crop is healthy and growing well.",
+    "tips": "Irrigate the field during important stages like flowering and cob filling. Keep the field free from weeds to give more nutrition to the corn. Watch the plants regularly to catch any problem early.",
+    "fertilizer": "Apply urea, NPK fertilizer, or compost to give good nutrition to the crop."
+  },
+  "Bacterialblight rice": {
+    "crop_name": "Bacterialblight rice",
+    "reason": "The leaves start with small water-like lines which later turn yellow and then brown. The tips of the leaves dry up first and then the whole leaf looks burnt. The plants look weak and may not grow properly if the infection is strong.",
+    "tips": "Plant varieties that are resistant to blight. Do not add too much nitrogen fertilizer. Drain extra water so that it does not stay in the field for long. Remove and burn the infected leaves to stop the spread.",
+    "fertilizer": "Use balanced NPK fertilizer and add compost to make the plant stronger."
+  },
+  "Brownspot rice": {
+    "crop_name": "Brownspot rice",
+    "reason": "Brown round or oval marks appear on the leaves and sometimes even on the grains. Some marks have a yellow ring around them. When the infection is heavy, the leaves turn brown and plants become weak. This reduces the yield.",
+    "tips": "Treat the seeds before planting to avoid early infection. Keep the soil rich by adding compost. Water the crop properly, as lack of water can make the disease worse.",
+    "fertilizer": "Apply potash fertilizer along with NPK for better strength."
+  },
+  "Leafblast rice": {
+    "crop_name": "Leafblast rice",
+    "reason": "The leaves show long spindle-shaped marks with gray centers and brown edges. If severe, the neck of the plant gets rotten, and the panicle may break. The plants look uneven and weak in growth.",
+    "tips": "Use rice varieties that can resist blast disease. Give enough space between plants for air circulation. Avoid using too much nitrogen fertilizer. Clean the field after harvest to remove infected straw.",
+    "fertilizer": "Apply NPK fertilizer with more potassium to help the plants fight the disease."
+  },
+  "Commonrust corn": {
+    "crop_name": "Commonrust corn",
+    "reason": "Small reddish-brown powdery spots appear on the leaves. These spots later join together and make the leaves dry early. The plants then become weak and the corn cobs do not grow properly.",
+    "tips": "Plant corn hybrids that can resist rust. Do not plant very close to each other, leave space for air. Check the crop early and remove badly infected leaves.",
+    "fertilizer": "Use NPK fertilizer along with foliar spray of micronutrients."
+  },
+  "Grayspot corn": {
+    "crop_name": "Grayspot corn",
+    "reason": "Long narrow gray marks appear on the leaves. These marks may join and cover large parts of the leaf. This reduces the green area and the plant cannot make enough food. The crop becomes weak and the yield goes down.",
+    "tips": "Plant resistant varieties and rotate with crops other than corn. Remove leftover crop parts from the field after harvest. Avoid over-watering and too much humidity.",
+    "fertilizer": "NPK fertilizer with added potassium is useful for strong leaves."
+  },
+  "Leafblight corn": {
+    "crop_name": "Leafblight corn",
+    "reason": "Big brown marks appear starting from the edges of the leaves. Slowly, the whole leaf dries up and becomes dead. The plants lose energy and the corn cobs remain small and weak.",
+    "tips": "Do not use infected seeds. Remove and destroy old infected crop parts from the field. Rotate crops and keep the field clean. Give water in the right amount, not too much or too little.",
+    "fertilizer": "Apply balanced NPK fertilizer and add organic manure for healthy growth."
+  },
+  "Earlyblight tomato": {
+    "crop_name": "Earlyblight tomato",
+    "reason": "Dark round spots with rings appear on the older leaves. The area around the spots turns yellow. Slowly, the lower leaves dry up, and the disease moves upward. Fruits may also get dark and rotten patches.",
+    "tips": "Use clean, disease-free seeds. Change the crop every season instead of planting tomatoes again and again. Tie and support the plants so that air passes freely. Remove infected leaves early to reduce spread.",
+    "fertilizer": "Use NPK fertilizer, add calcium, or use compost to strengthen the plant."
+  },
+  "Lateblight tomato": {
+    "crop_name": "Lateblight tomato",
+    "reason": "Leaves show dark water-soaked marks which quickly spread and turn brown. On the back side of leaves, white cotton-like growth may appear. Fruits get brown hard rot and spoil quickly.",
+    "tips": "Do not sprinkle water on leaves, use ground irrigation. Remove and destroy infected plants quickly to save the rest. Use tomato varieties that can resist late blight.",
+    "fertilizer": "Use NPK fertilizer with more potassium, or apply compost for resistance."
+  },
+  "Yellowleafcurlyvirus tomato": {
+    "crop_name": "Yellowleafcurlyvirus tomato",
+    "reason": "Leaves turn yellow and curl upwards. The plants stop growing and remain very short. Flowers fall off, so very few fruits are formed. The disease spreads by small white insects called whiteflies.",
+    "tips": "Control whiteflies using yellow sticky traps or nets. Plant resistant tomato varieties if available. Remove and destroy infected plants quickly. Rotate crops to reduce virus spread in the soil.",
+    "fertilizer": "Use NPK fertilizer and organic manure to keep the plants healthy."
+  }
+}

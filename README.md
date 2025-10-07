@@ -1,12 +1,34 @@
-# React + Vite
+# AgriScan Pro
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Agriscan Pro is a React + Vite application that allows users to upload images of crops and detect potential diseases. The app currently supports three types of crops: **rice, tomato, and corn**. For each crop, it can identify the most common diseases:
 
-Currently, two official plugins are available:
+- **Rice:** Bacterial Blight, Brown Spot, Leaf Blast  
+- **Tomato:** Early Blight, Late Blight, Yellow Leaf Curl Virus  
+- **Corn:** Leaf Blight, Gray Spot, Common Rust  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Key Features
 
-## Expanding the ESLint configuration
+- **Disease Prediction:** Upload an image and get the predicted disease with a **confidence score** indicating the severity.  
+- **Detailed Insights:** For the top predicted disease, the app provides:
+  - Reason for the disease
+  - Fertilizer recommendations
+  - Tips for prevention
+- **Alternate Predictions:** Since the model can predict multiple possibilities, the top 3 predicted diseases are shown. For the 2nd and 3rd predictions, only the disease name and confidence score are displayed.  
+- **Grad-CAM Visualization:** See how the model focuses on specific parts of the image to make its predictions.  
+- **History Tracking:** View the details of previously uploaded images and their predictions.  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Example
+
+Below is a sample scenario where a user uploads a **tomato crop affected by Late Blight**. The application shows the predicted disease, confidence scores, and additional insights.
+
+![Upload Tomato Crop](src/assets/sc1.png)  
+*Uploading a tomato image to detect Late Blight.*
+
+![Prediction Results](src/assets/sc2.png)  
+*Results given by AgriScan Pro showing the top disease, confidence score, and insights.*
+
+## Tech Stack
+
+- **Frontend:** React + Vite  
+- **Machine Learning:** Custom disease prediction model  
+- **UI/UX:** Interactive image upload, results visualization, and history tracking  

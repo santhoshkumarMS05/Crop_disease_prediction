@@ -2,19 +2,31 @@
 from flask import Blueprint, request, jsonify
 from flask_bcrypt import Bcrypt
 from pymongo import MongoClient
-import jwt, datetime, os
 from bson.objectid import ObjectId
+from dotenv import load_dotenv
+import jwt
+import datetime
+import os
 
+# ---------------- ENV SETUP ----------------
+# Load environment variables from .env file (in same folder)
+load_dotenv()
+
+# Get MongoDB URI and secret key from .env (safe)
+MONGO_URI = os.getenv("MONGO_URI")
+SECRET_KEY = os.getenv("SECRET_KEY", "MYSECRETKEY")  # fallback for local dev
+
+# ---------------- DATABASE SETUP ----------------
+try:
+    client = MongoClient(MONGO_URI)
+    db = client["crop_disease"]
+    users = db["users"]
+except Exception as e:
+    raise Exception(f"Database connection failed: {e}")
+
+# ---------------- FLASK SETUP ----------------
 bcrypt = Bcrypt()
 auth_bp = Blueprint("auth", __name__)
-
-# MongoDB connection
-MONGO_URI = "mongodb+srv://luffydb:luffy312@cluster0.oxudhbh.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
-client = MongoClient(MONGO_URI)
-db = client["crop_disease"]
-users = db["users"]
-
-SECRET_KEY = os.environ.get("SECRET_KEY", "MYSECRETKEY")  # change in production
 
 # ---------------- SIGNUP ----------------
 @auth_bp.route("/signup", methods=["POST"])
@@ -23,6 +35,9 @@ def signup():
     username = data.get("username")
     email = data.get("email")
     password = data.get("password")
+
+    if not username or not email or not password:
+        return jsonify({"error": "All fields are required"}), 400
 
     if users.find_one({"email": email}):
         return jsonify({"error": "Email already exists"}), 400
@@ -33,6 +48,7 @@ def signup():
         "email": email,
         "password": hashed_pw
     })
+
     return jsonify({"success": True, "message": "User created successfully"}), 201
 
 # ---------------- LOGIN ----------------
@@ -41,6 +57,9 @@ def login():
     data = request.get_json()
     email = data.get("email")
     password = data.get("password")
+
+    if not email or not password:
+        return jsonify({"error": "Email and password are required"}), 400
 
     user = users.find_one({"email": email})
     if not user or not bcrypt.check_password_hash(user["password"], password):
@@ -78,5 +97,7 @@ def get_profile():
 
     except jwt.ExpiredSignatureError:
         return jsonify({"error": "Token expired"}), 401
+    except jwt.InvalidTokenError:
+        return jsonify({"error": "Invalid token"}), 401
     except Exception as e:
         return jsonify({"error": str(e)}), 500

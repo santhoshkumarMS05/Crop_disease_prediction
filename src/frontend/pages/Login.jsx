@@ -15,7 +15,7 @@ const Login = ({ onLoginSuccess }) => {
     setError("");
     
     try {
-      const res = await fetch("http://127.0.0.1:5000/auth/login", {
+      const res = await fetch("https://agroscan-v9kw.onrender.com/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password })

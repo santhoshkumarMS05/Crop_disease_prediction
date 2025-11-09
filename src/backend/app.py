@@ -153,4 +153,7 @@ if __name__ == "__main__":
     print("Starting Crop Disease Detection API...")
     print(f"Upload folder: {UPLOAD_FOLDER}")
     print(f"Disease data file: {DISEASE_JSON}")
-    app.run(debug=True, host="0.0.0.0", port=5000)
+    
+    # Use Render's assigned PORT or default to 5000 locally
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)

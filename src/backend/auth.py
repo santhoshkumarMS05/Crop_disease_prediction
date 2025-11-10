@@ -1,20 +1,18 @@
-# crop_disease/src/backend/auth.py
 from flask import Blueprint, request, jsonify
 from flask_bcrypt import Bcrypt
 from pymongo import MongoClient
 from bson.objectid import ObjectId
 from dotenv import load_dotenv
+from flask_cors import CORS
 import jwt
 import datetime
 import os
 
 # ---------------- ENV SETUP ----------------
-# Load environment variables from .env file (in same folder)
 load_dotenv()
 
-# Get MongoDB URI and secret key from .env (safe)
 MONGO_URI = os.getenv("MONGO_URI")
-SECRET_KEY = os.getenv("SECRET_KEY", "MYSECRETKEY")  # fallback for local dev
+SECRET_KEY = os.getenv("SECRET_KEY", "MYSECRETKEY")
 
 # ---------------- DATABASE SETUP ----------------
 try:
@@ -27,6 +25,9 @@ except Exception as e:
 # ---------------- FLASK SETUP ----------------
 bcrypt = Bcrypt()
 auth_bp = Blueprint("auth", __name__)
+
+# ✅ Add CORS so frontend (Render app) can access this backend
+CORS(auth_bp)
 
 # ---------------- SIGNUP ----------------
 @auth_bp.route("/signup", methods=["POST"])
@@ -80,14 +81,12 @@ def get_profile():
         return jsonify({"error": "No token provided"}), 401
 
     try:
-        # Remove "Bearer " prefix if present
         if token.startswith("Bearer "):
             token = token[7:]
 
         decoded = jwt.decode(token, SECRET_KEY, algorithms=["HS256"])
         user_id = decoded.get("user_id")
 
-        # Fetch user info from MongoDB
         user = users.find_one({"_id": ObjectId(user_id)}, {"password": 0})
         if not user:
             return jsonify({"error": "User not found"}), 404

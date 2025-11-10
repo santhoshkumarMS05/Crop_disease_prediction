@@ -111,7 +111,7 @@ const Dashboard = () => {
         top3_confidence: result.prediction.top3.confidence,
       };
 
-      const res = await fetch("https://agroscan-v9kw.onrender.com/history/save", {
+      const res = await fetch("https://agroscan-backend-nu6s.onrender.com/history/save", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -170,7 +170,7 @@ const Dashboard = () => {
       formData.append("file", fileObj.file);
 
       try {
-        const res = await fetch("https://agroscan-v9kw.onrender.com/predict", {
+        const res = await fetch("https://agroscan-backend-nu6s.onrender.com/predict", {
           method: "POST",
           body: formData,
         });

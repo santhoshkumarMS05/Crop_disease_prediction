@@ -1,4 +1,3 @@
-# crop_disease/src/backend/app.py
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from werkzeug.utils import secure_filename
@@ -21,7 +20,10 @@ DISEASE_JSON = os.path.join("data", "disease_info.json")
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 app = Flask(__name__)
-CORS(app)
+
+# ✅ Allow only your frontend domain for security
+CORS(app, resources={r"/*": {"origins": ["https://agroscan-v9kw.onrender.com"]}})
+
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 
 # Init bcrypt
@@ -30,6 +32,7 @@ bcrypt.init_app(app)
 # Register blueprints
 app.register_blueprint(auth_bp, url_prefix="/auth")
 app.register_blueprint(history_bp, url_prefix="/history")
+
 
 # ------------------ LOAD DISEASE DATA ------------------
 try:

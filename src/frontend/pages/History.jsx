@@ -24,7 +24,7 @@ const History = () => {
 
     // Fetch user profile
     axios
-      .get("https://agroscan-v9kw.onrender.com/auth/profile", {
+      .get("https://agroscan-backend-nu6s.onrender.com/auth/profile", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {
@@ -47,7 +47,7 @@ const History = () => {
   const fetchHistory = async () => {
     setHistoryLoading(true);
     try {
-      const res = await fetch("https://agroscan-v9kw.onrender.com/history/history", {
+      const res = await fetch("https://agroscan-backend-nu6s.onrender.com/history/history", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -65,7 +65,7 @@ const History = () => {
 
   const fetchStats = async () => {
     try {
-      const res = await fetch("https://agroscan-v9kw.onrender.com/history/stats", {
+      const res = await fetch("https://agroscan-backend-nu6s.onrender.com/history/stats", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -84,7 +84,7 @@ const History = () => {
     try {
       // Use prediction_id which is the MongoDB _id
       const res = await fetch(
-        `http://127.0.0.1:5000/history/delete/${item.prediction_id}`,
+        `https://agroscan-backend-nu6s.onrender.com/history/delete/${item.prediction_id}`,
         {
           method: "DELETE",
           headers: { Authorization: `Bearer ${token}` },

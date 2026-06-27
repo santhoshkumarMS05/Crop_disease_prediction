@@ -29,8 +29,6 @@ Below is a sample scenario where a user uploads a **tomato crop affected by Late
 
 ## Tech Stack
 
-## Tech Stack
-
 - **Frontend:** React + Vite  
 - **Backend:** Flask handling image uploads, disease prediction requests, and history storage  
 - **Machine Learning:** Custom disease prediction model  

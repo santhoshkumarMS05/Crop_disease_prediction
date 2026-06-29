@@ -43,31 +43,11 @@ Below is a sample workflow where a user uploads a tomato crop image for disease 
 
 ## 🔄 Flow Diagram
 
-```mermaid
-flowchart LR
-    A[User Uploads Crop Image] --> B[Frontend Upload UI]
-    B --> C[Flask Backend API]
-    C --> D[PyTorch Disease Model]
-    D --> E[Prediction + Confidence Scores]
-    E --> F[Grad-CAM Visualization]
-    E --> G[Disease Insights & Recommendations]
-    G --> H[Save to User History]
-    H --> I[Display Results to User]
-```
+<img src="src/assets/flow_diagram.png" alt="Flow Diagram" width="900" height="500" />
 
 ## 🏗️ Architecture Diagram
 
-```mermaid
-flowchart TD
-    U[User] --> F[React + Vite Frontend]
-    F --> A[Flask API]
-    A --> M[PyTorch Inference Model]
-    A --> D[Disease Info JSON]
-    A --> H[History & Auth Services]
-    H --> DB[(Stored User History)]
-    M --> R[Predictions / Grad-CAM Output]
-    R --> F
-```
+<img src="src/assets/architecture_diagram.png" alt="Architecture Diagram" width="900" height="500" />
 
 ## 🛠️ Tech Stack
 
